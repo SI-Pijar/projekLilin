@@ -1,0 +1,1 @@
+@include('errors.layout', ['kode' => 403, 'judul' => 'Halaman ini bukan untuk peran Anda', 'pesan' => $exception->getMessage() ?: 'Anda tidak punya akses ke halaman ini.'])

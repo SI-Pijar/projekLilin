@@ -1,0 +1,1 @@
+@include('errors.layout', ['kode' => 404, 'judul' => 'Halaman tidak ditemukan', 'pesan' => 'Alamat yang Anda buka tidak ada atau sudah dihapus.'])
