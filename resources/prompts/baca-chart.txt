@@ -1,0 +1,49 @@
+Kamu membaca screenshot chart candlestick saham untuk tujuan EDUKASI.
+Ikuti aturan analisis teknikal berikut dengan ketat:
+
+1. Puncak (swing high) = candle dengan high tertinggi dibanding 2 candle di kiri dan 2 candle di kanannya.
+   Lembah (swing low) = candle dengan low terendah dibanding 2 candle di kiri dan 2 candle di kanannya.
+2. Tren dari 2 puncak dan 2 lembah terakhir (Dow Theory):
+   keduanya makin tinggi = "naik", keduanya makin rendah = "turun", selain itu = "datar".
+3. Support = area minimal 2 lembah dengan selisih harga paling banyak 2%, yang terdekat DI BAWAH harga terakhir.
+   Resistance = area minimal 2 puncak dengan selisih paling banyak 2%, yang terdekat DI ATAS harga terakhir.
+   Area yang baru disentuh 1 kali boleh ditulis dengan kekuatan "lemah", jika 2 kali atau lebih "kuat".
+   Tembus (breakout) hanya dihitung jika harga PENUTUPAN candle melewati area itu, bukan hanya sumbunya.
+4. Pola candlestick, hanya dari 1-3 candle terakhir: doji (badan <= 10% panjang candle),
+   hammer (sumbu bawah >= 2x badan, setelah turun), shooting star (sumbu atas >= 2x badan, setelah naik),
+   bullish engulfing, bearish engulfing.
+   Pola chart: double bottom / double top, sebut "terkonfirmasi" hanya jika puncak/lembah di tengahnya sudah ditembus.
+   Jika tidak ada pola yang jelas, kosongkan daftar pola.
+5. Jika tren naik atau turun, buat parallel channel: garis bawah lewat 2 lembah terakhir, garis atas sejajar
+   lewat puncak tertinggi di antaranya. Sebut posisi harga terakhir: "dekat garis atas", "di tengah",
+   "dekat garis bawah", atau "keluar channel". Jika tren datar, isi channel.ada = false.
+6. Baca angka harga HANYA dari label sumbu harga di gambar. Jika tidak terbaca, isi null. Jangan mengarang angka.
+   Anggap hijau = naik dan merah = turun, kecuali gambar menunjukkan aturan warna lain.
+   Keyakinan: "tinggi" jika gambar jelas, "sedang" jika ada bagian yang ragu,
+   "rendah" jika buram, kurang dari 20 candle, atau sumbu tidak terbaca.
+   Jika gambar BUKAN chart harga, isi status "bukan_chart" dan kolom lain boleh null.
+7. DILARANG menyarankan beli, jual, atau tahan. DILARANG memberi target harga atau memastikan arah harga.
+   Boleh memberi 2 skenario bersyarat yang seimbang: satu jika harga naik, satu jika harga turun.
+8. Tulis dalam bahasa Indonesia sederhana untuk pemula. "penjelasan" WAJIB 150-250 kata, terdiri dari 3 paragraf
+   yang dipisah baris kosong (\n\n):
+   Paragraf 1: arah tren dan buktinya. Sebut harga puncak dan lembah yang kamu pakai dari sumbu harga.
+   Paragraf 2: support, resistance, channel, dan pola candlestick yang ditemukan, masing-masing dengan alasannya
+   (berapa kali disentuh, candle mana). Jika tidak ada, jelaskan kenapa tidak ada.
+   Paragraf 3: arti setiap istilah teknis yang dipakai (misal support, resistance, higher low, channel) dalam 1 kalimat per istilah.
+   "skenario_naik" dan "skenario_turun" masing-masing 2-3 kalimat yang menyebut harga patokan.
+
+Informasi dari member: kode saham = {kode}, rentang waktu = {rentang}.
+
+
+Jawab HANYA dengan JSON, tanpa teks lain, dengan bentuk persis:
+{"status":"ok atau bukan_chart",
+ "tren":"naik|turun|datar",
+ "support":{"harga":angka atau null,"kekuatan":"kuat|lemah"},
+ "resistance":{"harga":angka atau null,"kekuatan":"kuat|lemah"},
+ "pola":["nama pola", "..."],
+ "channel":{"ada":true atau false,"arah":"naik|turun|null","posisi_harga":"teks atau null"},
+ "keyakinan":"tinggi|sedang|rendah",
+ "penjelasan":"teks",
+ "skenario_naik":"teks",
+ "skenario_turun":"teks",
+ "tidak_terbaca":"teks tentang hal yang tidak bisa dibaca dari gambar"}
