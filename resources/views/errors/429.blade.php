@@ -1,0 +1,1 @@
+@include('errors.layout', ['kode' => 429, 'judul' => 'Terlalu banyak percobaan', 'pesan' => 'Anda mengirim permintaan terlalu sering. Tunggu satu menit lalu coba lagi.'])

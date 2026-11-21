@@ -1,0 +1,1 @@
+@include('errors.layout', ['kode' => 500, 'judul' => 'Terjadi kesalahan di server', 'pesan' => 'Coba lagi sebentar lagi. Jika terus terjadi, hubungi kontak di halaman Bantuan.'])
