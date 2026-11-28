@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('isi')
 <div class="kepala">
     <div>
@@ -6,6 +7,7 @@
         <p class="pengantar">Unggah chart yang sudah dipotong dan lanjutannya. Lanjutan chart disembunyikan dari member sampai tantangan ditutup.</p>
     </div>
 </div>
+
 <div class="dua">
     <form method="POST" action="{{ route('mentor.tantangan.store') }}" enctype="multipart/form-data" class="kartu lapang tumpuk longgar">
         @csrf
@@ -42,6 +44,7 @@
         </div>
         <p><button class="tombol besar" type="submit">Ajukan ke admin</button></p>
     </form>
+
     <aside class="kartu tumpuk rapat">
         <h2>Daftar tantangan</h2>
         @if ($daftar->isEmpty())
